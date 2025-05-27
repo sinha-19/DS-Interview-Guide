@@ -1,110 +1,150 @@
-# 7. Trees (Binary, BST, AVL, etc.)
+# 07. Trees (Binary, BST, AVL, etc.)
 
 ---
 
 ## What is a Tree?
 
-A **tree** is a non-linear hierarchical data structure consisting of nodes, with a single node as the root and zero or more child nodes. Each node (except the root) has exactly one parent.
+A **tree** is a non-linear hierarchical data structure consisting of nodes with parent-child relationships.
 
 ---
 
 ## Basic Terminology
 
-- **Node:** Fundamental unit containing data and links.
-- **Root:** Topmost node.
-- **Parent/Child:** Relationship between nodes.
+- **Root:** Top node (no parent).
 - **Leaf:** Node with no children.
-- **Height/Depth:** Height = longest path to a leaf, Depth = root to node path.
-- **Subtree:** Tree formed by a node and its descendants.
+- **Height:** Longest path from root to a leaf.
+- **Depth:** Number of edges from root to node.
+- **Subtree:** Any node and its descendants.
 
 ---
 
 ## Types of Trees
 
 ### 1. Binary Tree
-Each node has at most two children (left, right).
+
+- Each node has at most two children (left, right).
 
 ### 2. Binary Search Tree (BST)
-A binary tree where:
-- Left child < Parent < Right child (for all nodes)
-- Enables fast search, insert, delete (O(log n) average, O(n) worst-case if unbalanced).
 
-### 3. Balanced Binary Trees
-- **AVL Tree:** Self-balancing BST. Heights of two subtrees of any node differ by at most one.
-- **Red-Black Tree:** BST with additional color property to ensure balance.
+- Left child < parent < right child.
+- Enables fast search, insert, delete (O(log n) average).
 
-### 4. Heap Tree
-- **Min Heap:** Parent ≤ children (root is minimum).
-- **Max Heap:** Parent ≥ children (root is maximum).
+### 3. Balanced Trees
 
-### 5. Other Trees
-- **B-Tree, B+ Tree:** Used in databases, multi-way search.
-- **Trie (Prefix Tree):** For efficient string search.
+- **AVL Tree:** Height-balanced via rotations.
+- **Red-Black Tree:** Balanced via color properties.
 
----
+### 4. Heap
 
-## Basic Operations and Complexity
+- Complete binary tree with max/min at the root.
 
-| Operation   | Binary Tree | BST (Avg) | AVL/Red-Black (Balanced) |
-|-------------|-------------|-----------|--------------------------|
-| Search      | O(n)        | O(log n)  | O(log n)                 |
-| Insert      | O(n)        | O(log n)  | O(log n)                 |
-| Delete      | O(n)        | O(log n)  | O(log n)                 |
-| Traversal   | O(n)        | O(n)      | O(n)                     |
+### 5. Trie
+
+- Prefix tree for strings.
 
 ---
 
-## Tree Traversals
+## Tree Node (Python)
 
-- **Inorder (LNR):** Left, Node, Right (BST: gives sorted order)
-- **Preorder (NLR):** Node, Left, Right
-- **Postorder (LRN):** Left, Right, Node
-- **Level Order:** BFS using a queue
+```python
+class TreeNode:
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
+```
 
-### Example: Inorder Traversal (Python)
+---
+
+## Traversal Techniques
+
+- **Preorder:** Root, Left, Right
+- **Inorder:** Left, Root, Right (sorted for BST)
+- **Postorder:** Left, Right, Root
+- **Level Order:** Level by level (BFS)
+
+### Example: Inorder Traversal
 
 ```python
 def inorder(root):
     if root:
         inorder(root.left)
-        print(root.data)
+        print(root.val)
         inorder(root.right)
 ```
 
 ---
 
+## BST Operations
+
+- **Insert:** Recursively insert at correct position.
+- **Delete:** Three cases (leaf, one child, two children).
+- **Search:** Traverse left/right based on value.
+
+---
+
+## AVL Trees
+
+- Maintains balance after insert/delete using rotations.
+- Balance factor: height(left) - height(right) ∈ {-1,0,1}
+
+---
+
+## Applications of Trees
+
+- Hierarchical data (file systems, org charts)
+- Expression parsing/evaluation
+- Databases (B-trees for indexing)
+- Network routing (trie)
+
+---
+
+## Heaps
+
+- **Min Heap:** Parent <= children (priority queue)
+- **Max Heap:** Parent >= children
+
+### Example: Heapify in Python
+
+```python
+import heapq
+arr = [3,1,4,1,5]
+heapq.heapify(arr)  # Min heap
+```
+
+---
+
+## Interview Patterns
+
+- Depth-first and breadth-first traversal
+- Lowest Common Ancestor
+- Serialize/deserialize binary tree
+
+---
+
+## Real-World Applications
+
+- Auto-complete (trie)
+- Memory management (heap)
+- Expression evaluators (parse tree)
+
+---
+
 ## Common Interview Questions
 
-1. Implement inorder, preorder, postorder traversals.
-2. Check if a binary tree is balanced.
-3. Find the height/depth of a tree.
-4. Lowest Common Ancestor (LCA) of two nodes.
-5. Convert binary tree to doubly linked list.
-6. Validate if a tree is a BST.
-7. Serialize and deserialize a binary tree.
+1. Validate if a tree is a BST.
+2. Find the height or depth of a tree.
+3. Print level order traversal.
+4. Convert sorted array to BST.
+5. Find kth smallest/largest in BST.
 
 ---
 
-## Applications
+## Best Practices
 
-- Hierarchical data (file systems)
-- Expression parsing and evaluation (syntax trees)
-- Databases (B-trees, B+ trees)
-- Priority queues (heaps)
-- Routing algorithms (trie, search trees)
-
----
-
-## Quick Revision Table
-
-| Tree Type    | Ordering Property           | Balance?      | Use Case               |
-|--------------|----------------------------|---------------|------------------------|
-| Binary Tree  | No                         | No            | General hierarchy      |
-| BST          | Left < Root < Right        | No            | Fast lookup            |
-| AVL          | Yes (BST)                  | Strict        | Always balanced        |
-| Red-Black    | Yes (BST)                  | Less strict   | Balanced, fast ops     |
-| Heap         | Parent ≥/≤ Children        | Yes (heapify) | Priority queue, heap   |
-| Trie         | n/a (prefix tree)          | n/a           | String search          |
+- Use recursion for natural tree problems.
+- Watch for stack overflow in deep trees.
+- Use iterative or queue-based traversals for large trees.
 
 ---
 
@@ -115,4 +155,12 @@ def inorder(root):
 
 ---
 
-Happy Coding! 🌳
+## Exercises
+
+1. Implement preorder, inorder, and postorder traversal.
+2. Write a function to check if a tree is balanced.
+3. Serialize and deserialize a binary tree.
+
+---
+
+Trees are essential for hierarchical and sorted data—master their traversals and manipulations!
