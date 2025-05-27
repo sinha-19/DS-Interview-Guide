@@ -1,10 +1,10 @@
-# 4. Linked Lists
+# 04. Linked Lists
 
 ---
 
 ## What is a Linked List?
 
-A **linked list** is a linear data structure where elements (nodes) are stored in non-contiguous memory locations. Each node contains data and a reference (pointer) to the next node in the sequence.
+A **linked list** is a linear data structure where each element (node) contains data and a reference (pointer) to the next node in the sequence.
 
 ---
 
@@ -12,11 +12,13 @@ A **linked list** is a linear data structure where elements (nodes) are stored i
 
 - **Singly Linked List:** Each node points to the next node.
 - **Doubly Linked List:** Each node points to both the next and previous node.
-- **Circular Linked List:** Last node points back to the first node (can be singly or doubly).
+- **Circular Linked List:** Last node points back to the head.
 
 ---
 
-## Basic Structure (Singly Linked List Example in Python)
+## Linked List Structure
+
+### Node Class (Python Example)
 
 ```python
 class Node:
@@ -25,79 +27,148 @@ class Node:
         self.next = None
 ```
 
+### Linked List Class (Partial)
+
+```python
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node
+```
+
 ---
 
-## Key Operations & Complexity
+## Operations and Complexity
 
-| Operation      | Description                         | Time Complexity |
-|----------------|-------------------------------------|-----------------|
-| Insertion      | At head: O(1), At tail: O(n)        |                 |
-| Deletion       | Given node: O(1), By value: O(n)    |                 |
-| Search         | Find an element                     | O(n)            |
-| Traversal      | Visit all elements                  | O(n)            |
-| Reverse        | Reverse the list                    | O(n)            |
+| Operation     | Singly | Doubly |
+|---------------|--------|--------|
+| Insert Front  | O(1)   | O(1)   |
+| Insert End    | O(n)   | O(n)   |
+| Delete Front  | O(1)   | O(1)   |
+| Delete End    | O(n)   | O(n)   |
+| Search        | O(n)   | O(n)   |
+| Reverse       | O(n)   | O(n)   |
 
 ---
 
 ## Advantages
 
-- Dynamic size (no need to define size at creation).
-- Easy insertion and deletion (especially at the head).
-- Efficient memory utilization (no wasted space as with arrays).
+- Dynamic size, easy to grow/shrink.
+- Efficient insert/delete at the beginning or middle.
+- No memory waste due to fixed size.
+
+## Limitations
+
+- No random access (must traverse nodes).
+- Extra memory for pointers.
+- Cache locality poorer than arrays.
 
 ---
 
-## Disadvantages
+## Common Algorithms
 
-- No random access (must traverse from head to access an element).
-- Extra memory for pointers.
-- More complex to implement than arrays.
+### 1. Reverse a Linked List
+
+```python
+def reverse_list(head):
+    prev = None
+    curr = head
+    while curr:
+        next = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next
+    return prev
+```
+
+### 2. Detect Cycle (Floyd's Tortoise and Hare)
+
+```python
+def has_cycle(head):
+    slow = fast = head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow == fast:
+            return True
+    return False
+```
+
+### 3. Merge Two Sorted Linked Lists
+
+```python
+def merge_lists(l1, l2):
+    dummy = Node(0)
+    tail = dummy
+    while l1 and l2:
+        if l1.data < l2.data:
+            tail.next, l1 = l1, l1.next
+        else:
+            tail.next, l2 = l2, l2.next
+        tail = tail.next
+    tail.next = l1 or l2
+    return dummy.next
+```
+
+---
+
+## Use Cases
+
+- Implementing stacks, queues
+- Undo functionality in editors
+- Adjacency lists in graphs
+- Memory management
+
+---
+
+## Doubly Linked Lists
+
+- Each node has `next` and `prev` pointers.
+- Enables reverse traversal.
+- Used in LRU cache, browser history, etc.
+
+---
+
+## Circular Linked List
+
+- Last node points back to the head.
+- Useful for round-robin scheduling, buffering.
+
+---
+
+## Real-World Applications
+
+- Music/playlist navigation
+- Task scheduling (round robin)
+- Undo/redo stacks in software
 
 ---
 
 ## Common Interview Questions
 
-1. Reverse a linked list.
-2. Detect a cycle in a linked list (Floyd’s algorithm).
-3. Find the middle of a linked list.
-4. Merge two sorted linked lists.
-5. Remove nth node from the end.
-6. Check if the linked list is a palindrome.
+1. Reverse a linked list (iterative/recursive)
+2. Detect a cycle in a linked list
+3. Merge two sorted lists
+4. Find the middle of the linked list
+5. Remove the nth node from end
+6. Partition list around a value
 
 ---
 
-## Sample: Reverse a Linked List (Python)
+## Best Practices
 
-```python
-def reverse_linked_list(head):
-    prev = None
-    curr = head
-    while curr:
-        next_node = curr.next
-        curr.next = prev
-        prev = curr
-        curr = next_node
-    return prev
-```
-
----
-
-## Applications
-
-- Implementation of stacks and queues.
-- Undo/redo functionality in applications.
-- Dynamic memory management (free lists).
-- Hash table chaining.
-
----
-
-## Quick Revision Table
-
-| Type             | Next Pointer | Prev Pointer | Circular? | Use Cases                   |
-|------------------|--------------|--------------|-----------|-----------------------------|
-| Singly Linked    | Yes          | No           | No        | Basic list, stack, queue    |
-| Doubly Linked    | Yes          | Yes          | No        | Browser history, undo/redo  |
-| Circular (any)   | Yes          | Optional     | Yes       | Round-robin scheduling      |
+- Use dummy nodes to simplify edge cases.
+- Always check for null pointers.
+- For large data, consider memory overhead.
 
 ---
 
@@ -108,4 +179,12 @@ def reverse_linked_list(head):
 
 ---
 
-Happy Coding! 🚀
+## Exercises
+
+1. Implement a singly and doubly linked list.
+2. Write a function to find and remove duplicates from a linked list.
+3. Implement a function to find the intersection of two linked lists.
+
+---
+
+Linked lists are versatile building blocks. Practice traversing, inserting, deleting, and manipulating them!
