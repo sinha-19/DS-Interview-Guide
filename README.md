@@ -7,23 +7,27 @@ This repository is a one-stop, comprehensive resource to master data structures,
 
 ## 📚 Table of Contents
 
-1. [Introduction to Data Structures](01_Introduction_to_Data_Structures.md)
-2. [Arrays](02_Arrays.md)
-3. [Strings](03_Strings.md)
-4. [Linked Lists](04_Linked_Lists.md)
-5. [Stacks](05_Stacks.md)
-6. [Queues and Deques](06_Queues_and_Deques.md)
-7. [Trees (Binary, BST, AVL, etc.)](07_Trees.md)
-8. [Heaps & Priority Queues](08_Heaps_and_Priority_Queues.md)
-9. [Hashing & Hash Tables](09_Hashing_and_Hash_Tables.md)
-10. [Graphs](10_Graphs.md)
-11. [Tries & Suffix Trees](11_Tries_and_Suffix_Trees.md)
-12. [Disjoint Set (Union Find)](12_Disjoint_Set_Union_Find.md)
-13. [Advanced Data Structures (Segment Tree, Fenwick, etc)](13_Advanced_Data_Structures.md)
-14. [Bit Manipulation & Bitwise Tricks](14_Bit_Manipulation.md)
-15. [Memory Management & Garbage Collection](15_Memory_Management.md)
-16. [Interview Patterns (Sliding Window, Two Pointer, etc)](16_Interview_Patterns.md)
-17. [Best Practices & Interview Q&A](17_Best_Practices_and_Interview_QA.md)
+Each chapter includes a direct [video] link for top YouTube tutorials and visual learning. Section names and file names are preserved as provided.
+
+| #  | Topic                                           | File Name                                         |   | Video Link |
+|----|-------------------------------------------------|---------------------------------------------------|---|------------|
+| 1  | Introduction to Data Structures                 | [01_Introduction_to_Data_Structures.md](01_Introduction_to_Data_Structures.md) |   | [video](https://www.youtube.com/results?search_query=Introduction+to+Data+Structures) |
+| 2  | Arrays                                          | [02_Arrays.md](02_Arrays.md)                      |   | [video](https://www.youtube.com/results?search_query=Arrays+Data+Structure) |
+| 3  | Strings                                         | [03_Strings.md](03_Strings.md)                    |   | [video](https://www.youtube.com/results?search_query=Strings+Data+Structure) |
+| 4  | Linked Lists                                    | [04_Linked_Lists.md](04_Linked_Lists.md)          |   | [video](https://www.youtube.com/results?search_query=Linked+Lists+Data+Structure) |
+| 5  | Stacks                                          | [05_Stacks.md](05_Stacks.md)                      |   | [video](https://www.youtube.com/results?search_query=Stacks+Data+Structure) |
+| 6  | Queues and Deques                               | [06_Queues_and_Deques.md](06_Queues_and_Deques.md) |   | [video](https://www.youtube.com/results?search_query=Queues+Deques+Data+Structure) |
+| 7  | Trees (Binary, BST, AVL, etc.)                  | [07_Trees.md](07_Trees.md)                        |   | [video](https://www.youtube.com/results?search_query=Trees+Binary+BST+AVL+Data+Structure) |
+| 8  | Heaps & Priority Queues                         | [08_Heaps_and_Priority_Queues.md](08_Heaps_and_Priority_Queues.md) |   | [video](https://www.youtube.com/results?search_query=Heaps+Priority+Queues+Data+Structure) |
+| 9  | Hashing & Hash Tables                           | [09_Hashing_and_Hash_Tables.md](09_Hashing_and_Hash_Tables.md) |   | [video](https://www.youtube.com/results?search_query=Hashing+Hash+Tables+Data+Structure) |
+| 10 | Graphs                                          | [10_Graphs.md](10_Graphs.md)                      |   | [video](https://www.youtube.com/results?search_query=Graphs+Data+Structure+Algorithms) |
+| 11 | Tries & Suffix Trees                            | [11_Tries_and_Suffix_Trees.md](11_Tries_and_Suffix_Trees.md) |   | [video](https://www.youtube.com/results?search_query=Tries+Suffix+Trees+Data+Structure) |
+| 12 | Disjoint Set (Union Find)                       | [12_Disjoint_Set_Union_Find.md](12_Disjoint_Set_Union_Find.md) |   | [video](https://www.youtube.com/results?search_query=Disjoint+Set+Union+Find+Data+Structure) |
+| 13 | Advanced Data Structures (Segment Tree, Fenwick, etc) | [13_Advanced_Data_Structures.md](13_Advanced_Data_Structures.md) |   | [video](https://www.youtube.com/results?search_query=Segment+Tree+Fenwick+Tree+Advanced+Data+Structures) |
+| 14 | Bit Manipulation & Bitwise Tricks               | [14_Bit_Manipulation.md](14_Bit_Manipulation.md)  |   | [video](https://www.youtube.com/results?search_query=Bit+Manipulation+Bitwise+Tricks) |
+| 15 | Memory Management & Garbage Collection          | [15_Memory_Management.md](15_Memory_Management.md) |   | [video](https://www.youtube.com/results?search_query=Memory+Management+Garbage+Collection+in+Programming) |
+| 16 | Interview Patterns (Sliding Window, Two Pointer, etc) | [16_Interview_Patterns.md](16_Interview_Patterns.md) |   | [video](https://www.youtube.com/results?search_query=Sliding+Window+Two+Pointer+Interview+Patterns) |
+| 17 | Best Practices & Interview Q&A                  | [17_Best_Practices_and_Interview_QA.md](17_Best_Practices_and_Interview_QA.md) |   | [video](https://www.youtube.com/results?search_query=Data+Structures+Interview+Questions) |
 
 ---
 
@@ -37,76 +41,13 @@ This repository is a one-stop, comprehensive resource to master data structures,
   - **Real-world applications**
   - **Common interview problems**
   - **References and further reading**
+- Use the [video] links in the Table of Contents for instant access to quality video explanations.
 
 ---
 
 ## ✨ Section Summaries
 
-### 1. [Introduction to Data Structures](01_Introduction_to_Data_Structures.md)
-- What are data structures, why they matter, and how to choose the right one for your problem.
-- Overview of linear, non-linear, and specialized structures.
-
-### 2. [Arrays](02_Arrays.md)
-- Foundation of all DS: contiguous memory, fixed size, fast random access.
-- Covers static/dynamic arrays, common patterns, and array algorithms.
-
-### 3. [Strings](03_Strings.md)
-- String manipulation, searching, pattern matching, and regular expressions.
-- Unicode, encoding, and common string interview problems.
-
-### 4. [Linked Lists](04_Linked_Lists.md)
-- Singly, doubly, and circular linked lists.
-- Implementation, traversal, insertion, deletion, and classic LL interview questions.
-
-### 5. [Stacks](05_Stacks.md)
-- LIFO principle, stack operations, and implementations.
-- Applications in parsing, recursion, undo features, and backtracking.
-
-### 6. [Queues and Deques](06_Queues_and_Deques.md)
-- FIFO queues, double-ended queues, circular buffers.
-- Use cases: scheduling, BFS, sliding window, and more.
-
-### 7. [Trees (Binary, BST, AVL, etc.)](07_Trees.md)
-- Hierarchical data, traversals, binary search trees, balanced trees.
-- Applications in storage, parsing, and hierarchical models.
-
-### 8. [Heaps & Priority Queues](08_Heaps_and_Priority_Queues.md)
-- Min/max heaps, priority queues, heap operations and heap sort.
-- Use in scheduling, streaming, and graph algorithms.
-
-### 9. [Hashing & Hash Tables](09_Hashing_and_Hash_Tables.md)
-- How hash functions work, collision resolution, and hash set/map usage.
-- Applications in caching, frequency counting, and fast lookups.
-
-### 10. [Graphs](10_Graphs.md)
-- Representation (adjacency list/matrix), traversal (DFS/BFS), and algorithms.
-- Problems: shortest path, connectivity, cycles, and real-world networks.
-
-### 11. [Tries & Suffix Trees](11_Tries_and_Suffix_Trees.md)
-- Structures for advanced string algorithms like autocomplete and substring search.
-- Trie operations, suffix tree concepts, and practical use cases.
-
-### 12. [Disjoint Set (Union Find)](12_Disjoint_Set_Union_Find.md)
-- Efficient grouping and dynamic connectivity.
-- Path compression, union by rank, and applications (MST, clusters, etc.).
-
-### 13. [Advanced Data Structures (Segment Tree, Fenwick, etc)](13_Advanced_Data_Structures.md)
-- Segment trees, Fenwick trees (BIT), sparse tables, and their use in interval/range queries.
-- Real-world applications in computational geometry, databases, and competitive programming.
-
-### 14. [Bit Manipulation & Bitwise Tricks](14_Bit_Manipulation.md)
-- Efficient low-level operations for optimization and clever algorithmic tricks.
-- Subset generation, power of two, and bitmask DP.
-
-### 15. [Memory Management & Garbage Collection](15_Memory_Management.md)
-- Stack vs heap, manual vs automatic management, garbage collection strategies.
-- Avoiding memory leaks and best practices.
-
-### 16. [Interview Patterns (Sliding Window, Two Pointer, etc)](16_Interview_Patterns.md)
-- Recognize and apply top interview patterns: sliding window, two-pointer, monotonic stack, backtracking, and binary search on answer.
-
-### 17. [Best Practices & Interview Q&A](17_Best_Practices_and_Interview_QA.md)
-- Tips for coding interviews, best practices, common pitfalls, and a curated Q&A/problem list.
+Each section provides theory, patterns, code, and interview insights. Click on the [video] link beside each topic for the best YouTube tutorials and visual guides.
 
 ---
 
@@ -126,6 +67,7 @@ This repository is a one-stop, comprehensive resource to master data structures,
 3. **Solve exercises:** Each module ends with must-practice problems.
 4. **Apply patterns:** Learn to recognize patterns in interview settings.
 5. **Revise regularly:** Use summaries and tables for quick revision.
+6. **Visual learning:** Use the [video] links for each topic to access high-quality video lectures and explanations.
 
 ---
 
